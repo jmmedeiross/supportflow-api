@@ -1,0 +1,4 @@
+<Solution>
+  <Project Path="src/SupportFlow.Api/SupportFlow.Api.csproj" />
+  <Project Path="tests/SupportFlow.Tests/SupportFlow.Tests.csproj" />
+</Solution>

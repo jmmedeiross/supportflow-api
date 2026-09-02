@@ -1,0 +1,49 @@
+@host = http://localhost:5080
+@token = COLE_O_TOKEN_AQUI
+@ticketId = COLE_O_ID_DO_CHAMADO_AQUI
+
+### Saúde da aplicação
+GET {{host}}/health
+
+### Criar conta de cliente
+POST {{host}}/api/auth/register
+Content-Type: application/json
+
+{
+  "fullName": "Cliente Teste",
+  "email": "cliente@example.com",
+  "password": "Cliente123!"
+}
+
+### Login do cliente
+POST {{host}}/api/auth/login
+Content-Type: application/json
+
+{
+  "email": "cliente@example.com",
+  "password": "Cliente123!"
+}
+
+### Criar chamado
+POST {{host}}/api/tickets
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+{
+  "title": "Problema no acesso ao catálogo",
+  "description": "A página do catálogo retorna uma mensagem de erro ao carregar.",
+  "priority": "High"
+}
+
+### Listar chamados com filtros e paginação
+GET {{host}}/api/tickets?status=Open&priority=High&page=1&pageSize=10
+Authorization: Bearer {{token}}
+
+### Adicionar comentário
+POST {{host}}/api/tickets/{{ticketId}}/comments
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+{
+  "message": "O erro acontece tanto no computador quanto no celular."
+}
