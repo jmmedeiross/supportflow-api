@@ -4,6 +4,12 @@ API REST para gestão de chamados de suporte, criada como projeto de portfólio 
 
 O sistema permite cadastrar clientes, autenticar usuários, abrir chamados, atribuir responsáveis, controlar mudanças de status, registrar comentários e consultar dados com filtros e paginação.
 
+## Documentação interativa
+
+Captura real do Swagger com a aplicação executada localmente em modo Development. O Swagger permite explorar os endpoints da API.
+
+![Documentação interativa](docs/images/swagger.jpg)
+
 ## Tecnologias
 
 - .NET 10 LTS e C#
@@ -85,14 +91,8 @@ O banco SQLite é criado automaticamente na primeira execução.
 
 ### Usuários de demonstração
 
-Somente no ambiente `Development`, a aplicação cria estes usuários:
+Somente no ambiente `Development`, a aplicação cria usuários fictícios com os perfis Admin e Agent. Confira a configuração de demonstração nos arquivos do projeto e ajuste as credenciais localmente. Desative o seed e substitua as credenciais antes de publicar a API.
 
-| Perfil | E-mail | Senha |
-|---|---|---|
-| Admin | `admin@supportflow.local` | `Admin123!` |
-| Agent | `agent@supportflow.local` | `Agent123!` |
-
-Essas credenciais existem apenas para demonstração. Altere ou desative o seed antes de publicar a API.
 
 ### Testes
 
